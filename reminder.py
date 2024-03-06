@@ -1,5 +1,8 @@
+import sys
 import socket
 import scapy
+import os
+
 def try_catch():
     socket.setdefaulttimeout(2)
     s=socket.socket()
@@ -30,15 +33,14 @@ def checkVulns(banner):
     except Exception as e:
         print(e)
 
-
-
-
-
-
+def sys_ex():
+    print(f"You have entered {len(sys.argv)} arguments in the terminal an the are")
+    for arguments in sys.argv:
+        print(arguments)
 
 if __name__ == "__main__":
     checkVulns(" Xitami")
-
+    sys_ex()
 
 
 
