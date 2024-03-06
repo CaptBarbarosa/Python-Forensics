@@ -3,6 +3,7 @@ import socket
 import scapy
 import os
 
+
 def try_catch():
     socket.setdefaulttimeout(2)
     s=socket.socket()
@@ -12,6 +13,7 @@ def try_catch():
         print(ans)
     except Exception as e:
         print(e)
+
 
 def retBanner(ip, port):
     try:
@@ -23,6 +25,7 @@ def retBanner(ip, port):
     except:
         return
 
+
 def checkVulns(banner):
     try:
         f = open("vuln_banner.txt","r")
@@ -33,16 +36,15 @@ def checkVulns(banner):
     except Exception as e:
         print(e)
 
+
 def sys_ex():
     print(f"You have entered {len(sys.argv)} arguments in the terminal an the are")
     for arguments in sys.argv:
         print(arguments)
 
+
 if __name__ == "__main__":
     checkVulns(" Xitami")
     sys_ex()
-
-
-
 
 
